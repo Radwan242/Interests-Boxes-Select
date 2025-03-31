@@ -1,0 +1,101 @@
+:root {
+  --main-purple-color: #5c48f1;
+  --elements-background-color: #eeecfd;
+  --element-border-color: #e0e0e1;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.box {
+  background-color: #fafafa;
+  padding: 5px;
+  width: 750px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: sans-serif;
+}
+.container{
+}
+input[type=checkbox]{
+  --webkit-apperance:none;
+  appearance: none;
+}
+h2{
+  background-color: var(--elements-background-color);
+  text-align: center;
+  padding: 20px;
+  color: var(--main-purple-color);
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.container label{
+  margin: 5px;
+  padding: 40px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 2px solid var(--element-border-color);
+  border-radius: 6px;
+  transition: 0.3s;
+  flex: 1;
+}
+input:checked + label{
+  background-color: var(--elements-background-color);
+  border-color: var(--main-purple-color);
+}
+.container label i{
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: var(--main-purple-color);
+}
+.container label div{
+  font-size: 25px;
+}
+.toggle-div{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.toggle-div::before{
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 3px solid var(--element-border-color);
+}
+.toggle-div::after{
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 5px;
+  top: 5px;
+  border-radius: 6px;
+  transition: 0.3s;
+  
+}
+input:checked + label .toggle-div::before{
+  border-color: var(--main-purple-color);
+}
+input:checked + label .toggle-div::after{
+  background-color: var(--main-purple-color);
+}
+.toggle-div:hover::before{
+  border-color: var(--main-purple-color);
+}
+.toggle-div:hover::after{
+  background-color: rgb(92 72 241 / 0.5);
+}
